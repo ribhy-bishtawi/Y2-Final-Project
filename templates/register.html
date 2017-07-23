@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block body %}
+<link rel="stylesheet" type="text/css" href="../static/css/style.cs">
 <h1>Register Page</h1>
 
 <form action="/signup" method="get">
 First Name
-<input type="textarea" autocomplete="off" name="firstname" required>
+<input type="text" autocomplete="off" name="firstname" required>
 
 Last Name
-<input type="textarea" autocomplete="off" name="lastname" required>
+<input type="text" autocomplete="off" name="lastname" required>
 <br>
 <br>
 Email address
@@ -21,11 +22,11 @@ Password
 <br>
 Hometown
 
-<input type="textarea" autocomplete="off" name="hometown">
+<input type="text" autocomplete="off" name="hometown">
 <br>
 <br>
 Website
-<input type="textarea" autocomplete="off" name="website">
+<input type="text" autocomplete="off" name="website">
 
 
 <input type="submit" autocomplete="off" value="Submit">
