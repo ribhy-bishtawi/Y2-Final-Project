@@ -3,26 +3,35 @@
 {% block body %}
 <h1>Register Page</h1>
 
-<!-- TODO: implement register page -->
-<form action="/login" method="post">
- <div class="top-r">
-            <div class="content">
-              <label>
-                Email<span class="req"></span>
-              </label>
-              <input name="email-l" type="email" required autocomplete="off" />
-            </div>
-     <div class="content">
-              <label>
-               Password<span class="req"></span>
-              </label>
-              <input name="password-l" type="password" required autocomplete="off" />
+<form action="/signup" method="post">
+First Name
+<input type="textarea" autocomplete="off" name="firstname" required/>
 
-            </div>
-              <input name="password-l" type="submit" required autocomplete="off" value="submit" />
+Last Name
+<input type="textarea" autocomplete="off" name="lastname" required/>
+<br>
+<br>
+Email address
+<input type="email" autocomplete="off" name="email" required/>
+<br>
+<br>
+Password
+<input type="password" autocomplete="off" name="password" required/>
+<br>
+<br>
+Hometown
+
+<input type="textarea" autocomplete="off" name="hometown"/>
+<br>
+<br>
+Website
+<input type="textarea" autocomplete="off" name="website"/>
 
 
+<input type="submit" autocomplete="off" value="Submit"/>
 
 </form>
+
+<!-- TODO: implement register page -->
 
 {% endblock %}
