@@ -3,7 +3,22 @@
 {% block body %}
 
 <h1>Feed Page</h1>
-{% for value in
-<!-- TODO: implement feed page -->
 
+<form action="/newfeeds" method="post">
+	
+	<textarea placeholder="Content" name="post"> </textarea> <br>
+	<input type="submit">
+
+
+
+
+</form>
+{% for majd in feedb %}
+
+<ul>
+	<h4> {{majd.post}} </h4>
+
+
+</ul>
+{% endfor %}
 {% endblock %}

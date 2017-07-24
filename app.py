@@ -5,23 +5,66 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 db=dataset.connect("postgres://xsablmlvdcwygk:304f665b117ed37f455b90d9ec7ea4235c2ea5a088b24fb094114343473c3ebb@ec2-54-235-119-27.compute-1.amazonaws.com:5432/d7489ilia0g0mf")
 
-@app.route('/')
-@app.route('/home.html')
-def homepage():
 
-	if 'email' in session :
-		return render_template("home.html")+'Logged in as %s' %(session['email'])
-	else:
+
+@app.route('/')
+@app.route('/home')
+
+def homepage():  
+	if 'email' in session : 
+		return render_template("home.html")+'Logged in as %s' %(session['email'])  
+	else:    
 		return render_template("home.html")
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def registerpage():
-	return render_template("reg.html")
+	return render_template("register.html")
+
+
+@app.route('/list', methods=['GET', 'POST'])
+def listpage():
+	usersall=db["signup"]
+	users=list(usersall.all())
+	return render_template("list.html", users=users )
+
+@app.route('/feed', methods=['get', 'post'])
+def akakakakaka():
+	if 'email' in session :
+		return render_template("feed.html")
+	else:
+		return render_template("login.html")
+
+@app.route('/newfeeds', methods=['get', 'post'])
+def feedpage():
+	if request.method==['get']:
+		return render_template("feed.html")
+	else:
+		form = request.form
+		posts = form["post"]
+		newfeed=db["newfeeds"]
+		entry = { "post":posts}
+		newfeed.insert(entry)
+		feedb=list(newfeed.all())
+
+		return render_template("feed.html",  feedb=feedb)
+
+		users=list(usersall.all())
+
+	
+@app.route("/login", methods=['GET', 'POST'])
+def log():
+	return render_template("login.html")
+
+@app.route('/logout', methods=['post', 'get'])
+def logout():
+	session.pop('email', None)
+	return redirect("/login")
 
 
 @app.route('/signup',  methods=['get','post'] )
 def signup():
+
 		if request.method=="get":
 			return render_template("reg.html")
 		else:
@@ -41,7 +84,7 @@ def signup():
 			else:
 				return "user already"
 
-@app.route("/login", methods=['GET', 'POST'])
+@app.route("/logi", methods=['GET', 'POST'])
 def login():
 		if request.method == "get":
 			return render_template("login.html")
@@ -55,31 +98,11 @@ def login():
 			if len(list(signupTable.find(email=email,password=password))) > 0 :
 				session['email'] = request.form['email-l']
 				signupTable.insert(entry)
-				return redirect("/home.html")
+				return redirect("/home")
 
 			else:
 				return"false"
 
-@app.route("/login.html", methods=['GET', 'POST'])
-def loginn():
-	return  render_template("login.html")
-@app.route('/reg.html')
-def reg():
-	return  render_template("reg.html")
-@app.route('/logout', methods=['post', 'get'])
-def logout():
-	session.pop('email', None)
-	return redirect("/login.html")
-
-
-
-
-# TODO: route to /list
-
-# TODO: route to /feed
-
-
-# # TODO: route to /error
 
 if __name__ == '__main__':
 	app.run(port=3000)
