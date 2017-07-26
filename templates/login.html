@@ -8,7 +8,12 @@
 
 {% block body %}
 <link rel="stylesheet" href="../static/css/style.css">
-
+{% if error == True %}
+ <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  Username or Passwod is incorrect
+</div> 
+{% endif %}
 <div class="form">
       
       <ul class="tab-group">

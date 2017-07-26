@@ -48,7 +48,7 @@ a:hover {
   color: #a0b3b0;
   font-size: 20px;
   float: left;
-  width: 50%;
+  width:100%;
   text-align: center;
   cursor: pointer;
   -webkit-transition: .5s ease;
@@ -106,6 +106,7 @@ label.highlight {
 }
 
 .home-p{
+    
     color: rgb(232, 223, 223);
     max-width: 600px;
     margin-left: 375px;
@@ -116,6 +117,28 @@ label.highlight {
     font-size: 20px;
 }
 
+.majd-p{
+    color: rgb(232, 223, 223);
+    max-width: 600px;
+    margin-left: 375px;
+    margin-top: 200px;
+    background-color: rgba(19, 35, 47, 0.9);
+    text-align: center;
+    max-height: 200px;
+    font-size: 20px;
+}
+
+.ribhy-p{
+    color: rgb(232, 223, 223);
+    max-width: 600px;
+    margin-left: 375px;
+    margin-top: 200px;
+    background-color: rgba(19, 35, 47, 0.9);
+    text-align: center;
+    max-height: 200px;
+    font-size: 20px;
+
+}
 input, textarea {
   font-size: 22px;
   display: block;
@@ -201,4 +224,27 @@ margin-right:50px;
 position:relative;
 }
 
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
 

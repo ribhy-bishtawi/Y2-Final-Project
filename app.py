@@ -7,7 +7,7 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 db=dataset.connect("postgres://xsablmlvdcwygk:304f665b117ed37f455b90d9ec7ea4235c2ea5a088b24fb094114343473c3ebb@ec2-54-235-119-27.compute-1.amazonaws.com:5432/d7489ilia0g0mf")
 
 # def reset_db():
-# 	posts=db["signup"]
+# 	posts=db["newfeeds"]
 # 	posts.drop()
 # reset_db()
 # print crash()
@@ -17,10 +17,10 @@ db=dataset.connect("postgres://xsablmlvdcwygk:304f665b117ed37f455b90d9ec7ea4235c
 
 def homepage():  
 	if 'username' in session :
-		return render_template("home.html")+'Logged in as %s' %(session['username'])
+		return render_template("home.html")
 	else:    
 		return render_template("home.html")
-
+# +'Logged in as %s' %(session['username'])
 
 @app.route('/register', methods=['GET', 'POST'])
 def registerpage():
@@ -29,16 +29,22 @@ def registerpage():
 
 @app.route('/list', methods=['GET', 'POST'])
 def listpage():
-	usersall=db["signup"]
-	users=list(usersall.all())
+	if 'username' in session :
+		usersall=db["signup"]
+		users=list(usersall.all())
+		return render_template("list.html", users=users)
 
-	return render_template("list.html", users=users)
+	else:
+		
+		return render_template("login.html")
 
 
 @app.route('/feed', methods=['get', 'post'])
 def akakakakaka():
 	if 'username' in session :
-		return render_template("feed.html")
+		newfeed=db["newfeeds"]
+		feedb=list(newfeed.all())[::-1] 
+		return render_template("feed.html" ,feedb=feedb)
 	else:
 		return render_template("login.html")
 
@@ -101,10 +107,12 @@ def signup():
 				signupTable.insert(entry)
 				return render_template("login.html", gender=gender ,email=email, firstname=firstname,lastname=lastname, username=username, password=password, hometown=hometown,website=website,genderr=genderr)
 			else:
-
-				return render_template("eror.html")
+				session['error'] =  True
+				error = session['error']
+				return render_template("register.html",error=error)
 @app.route("/logi", methods=['GET', 'POST'])
 def login():
+
 		if request.method == "get":
 			return render_template("login.html")
 		else:
@@ -118,9 +126,9 @@ def login():
 				return redirect("/list")
 
 			else:
-				return"false"
-
-
+				session['error'] =  True
+				error = session['error']
+				return render_template("login.html",error = error)
 if __name__ == '__main__':
 	app.run(port=3000)
 

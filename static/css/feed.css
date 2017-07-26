@@ -7,10 +7,13 @@
   display: block;
 }
 .newsfeed-div{
-    padding-top: 50px;
+  left: 50px;
+  color: #ffffff;
+  margin-top: 50px;
 
 }
 .feed-image{
+  top: 10px;
   width: 60px;
   height: 60px;
   float:left;

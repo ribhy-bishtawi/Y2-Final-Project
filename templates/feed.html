@@ -9,7 +9,7 @@
 		<form action="/newfeeds" method="post">
 		
 		<textarea placeholder="Content" name="post" class="newsfeed-textarea"> </textarea> <br>
-		<input type="submit" value="Feed">
+		<input type="submit" value="POST">
 
 
 	
@@ -18,19 +18,24 @@
 	</form>
 	<div class="newsfeed-div">
 	{% for majd in feedb %}
-	<ul> <span class="feed-user"> 
+	<div style=" border:  3px solid #354e55; margin-top: 5px;
+">
+	<ul>
 	<img  class="feed-image" src ="../static/images/fb.jpg">
-	    <h1><td>
-	{{majd.username}}</td></h1></span> </ul>
-				<h5><td>
-	{{majd.time_string}}</td></h5></span>
-		<span class="feed-text">
-	    <h3><td> {{majd.post}}</td> </h2> </span>
+	    </span> </ul>
 
+				<h2><td>
+	{{majd.username}}</td></h2>
+	<h1><td>
+	{{majd.post}}</td></h1></span>
+		
+	    <h5><td> {{majd.time_string}}</td> </h5> </span>
 
+</div>
 			</form>
 	 </ul>
 	{% endfor %}
+	</span>
 	</div>
 </div>
 	{% endblock %}

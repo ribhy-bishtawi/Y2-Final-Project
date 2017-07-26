@@ -2,7 +2,12 @@
 
 {% block body %}
   <link rel="stylesheet" href="../static/css/style.css">
-
+{% if error == True %}
+ <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  Username already in use
+</div> 
+{% endif %}
   <div class="form">
       
       <ul class="login-ul tab-group">
