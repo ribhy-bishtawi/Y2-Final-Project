@@ -1,24 +1,22 @@
 {% extends "base.html" %}
 
 {% block body %}
-
-<div class="card">
-  <img src="https://majdmarie.herokuapp.com/static/images/MyPicture.jpg" alt="John" style="width:100%">
-  <div class="container">
-    <h1>Majd Marie</h1>
-    <p class="title">Palestine, Jenin, Ya'bad</p>
-    <p>Y2 Student</p>
-   <p><a href="https://majdmarie.herokuapp.com/"> </a> <button style>Contact</button></p>
-  </div>
-</div>
-
+<link rel="stylesheet" href="../static/css/list.css">
 {% for person in users%}
-<ul>
-    <li><td> {{person.firstname}}</td><br><br></li>
-    <li><td> {{person.lastname}}</td><br><br></li>
-    <li> <td> {{person.email}}</td><br><br></li>
-    <li>  <td> {{person.hometown}}</td><br><br></li>
-	<li> <td> {{person.website}}</td><br><br></ul></li>
+    <div class="card">
+    <div class="container"  style=" background-color: rgba(19, 35, 47, 0.9); ">
+{% if person.gender == "Male" %}
+        <img alt="Avatar" style="width:100%" src ="../static/images/male.png">
+{% else %}
+        <img alt="Avatar" style="width:100%" src ="../static/images/female.png">
+{% endif %}
+<div ">
+    <h1><td> {{person.firstname}} {{person.lastname}}</td></h1>
 
+       <h3 style="color:white; ">  <td > {{person.hometown}}</td><br> </h3>
+	<p> <td> <a href ={{person.website}}></td><button>Website</button></a></p>
+</div>
+    </div>
+</div>
 {% endfor %}
 {% endblock %}

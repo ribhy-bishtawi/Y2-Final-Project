@@ -1,12 +1,16 @@
 .card {
+    float:left;
+    padding:30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   text-align: center;
   font-family: arial;
+  width:300px;
+  margin-left: 32px;
 }
 
 .container {
-  padding: 0 16px;
+    padding: 10px 16px;
 }
 
 .container::after {
@@ -26,7 +30,7 @@ button {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: green;
+  background-color: #1ab188;
   text-align: center;
   cursor: pointer;
   width: 100%;

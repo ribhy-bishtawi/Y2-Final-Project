@@ -2,20 +2,43 @@
 <html>
 <head>
   <meta charset="UTF-8">
+<link rel="stylesheet" href="../static/css/list.css">	
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="../static/css/style.css">	
+<link rel="stylesheet" href="../static/css/test.css">	
 
-  <link rel="stylesheet" href="../static/css/list.css">
 
  <title>WeCode Portal</title>
+
+</head>
+<body>
+
+ <div class="nav">
   <ul>
     <li><a href="home">Home</a></li>
-    <li><a href="register">Register</a></li>
     <li><a href="list">Members</a></li>
     <li><a href="feed">Newsfeed</a></li>
+    <li class="dropdown">
+    
+      {% if 'username' in session %}
+
+      <a href="logout">Logout</a>
+      {%else%}
+          <a href="javascript:void(0)" class="dropbtn">Register</a>
+
+      <div class="dropdown-content">
+
+      <a href="register">Sign up</a>
+      <a href="login">Login</a>
+      {% endif%}
+    </div>
+  </li>
 
 <!-- TODO: add more links on the navigation bar here -->
   </ul>
-</head>
-<body>
+ </div>
+
 {% block body %}
 <h1>My home page</h1>
 

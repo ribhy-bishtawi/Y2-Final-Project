@@ -7,8 +7,8 @@ html {
 }
 
 body {
-  background: ;
-  font-family: 'Titillium Web', sans-serif;
+  background-image: url(../images/bg1.jpg);
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -105,6 +105,17 @@ label.highlight {
   color: #ffffff;
 }
 
+.home-p{
+    color: rgb(232, 223, 223);
+    max-width: 600px;
+    margin-left: 375px;
+    margin-top: 200px;
+    background-color: rgba(19, 35, 47, 0.9);
+    text-align: center;
+    max-height: 200px;
+    font-size: 20px;
+}
+
 input, textarea {
   font-size: 22px;
   display: block;
@@ -176,3 +187,18 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+.radio1 {
+display:inline;
+position: relative;
+}
+.radio2 {
+display:inline;
+
+position: relative;
+}
+label{
+margin-right:50px;
+position:relative;
+}
+
+

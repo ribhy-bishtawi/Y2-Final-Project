@@ -1,0 +1,26 @@
+
+#feed-list{
+  margin-top: 20px;
+}
+.feed-item{
+  padding-top: 10px;
+  display: block;
+}
+.newsfeed-div{
+    padding-top: 50px;
+
+}
+.feed-image{
+  width: 60px;
+  height: 60px;
+  float:left;
+  max-width:100px;
+  border-radius: 50%;
+}
+.feed-user{
+  margin-right: 500px;
+  font-size: 18px;
+  line-height: 1.5em;
+  text-decoration: none;
+  color:#363636;
+}
