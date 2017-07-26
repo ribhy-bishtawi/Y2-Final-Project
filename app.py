@@ -102,7 +102,7 @@ def signup():
 				return render_template("login.html", gender=gender ,email=email, firstname=firstname,lastname=lastname, username=username, password=password, hometown=hometown,website=website,genderr=genderr)
 			else:
 
-				return "already"
+				return render_template("eror.html")
 @app.route("/logi", methods=['GET', 'POST'])
 def login():
 		if request.method == "get":
