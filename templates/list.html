@@ -7,9 +7,14 @@
     <div class="container"  style=" background-color: rgba(19, 35, 47, 0.9); ">
 {% if person.gender == "Male" %}
         <img alt="Avatar" style="width:100%" src ="../static/images/male.png">
-{% else %}
+{% elif person.gender =="Female" %}
         <img alt="Avatar" style="width:100%" src ="../static/images/female.png">
+
+{% else %}
+        <img alt="Avatar" style="width:100%" src ="../static/images/nerd.png">
+
 {% endif %}
+
 <div ">
     <h1><td> {{person.firstname}} {{person.lastname}}</td></h1>
 
