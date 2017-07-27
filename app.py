@@ -20,7 +20,7 @@ def homepage():
 		return render_template("home.html")
 	else:    
 		return render_template("home.html")
-# +'Logged in as %s' %(session['username'])
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def registerpage():
@@ -31,7 +31,7 @@ def registerpage():
 def listpage():
 	if 'username' in session :
 		usersall=db["signup"]
-		users=list(usersall.all())
+		users=list(usersall.all())[::-1]
 		return render_template("list.html", users=users)
 
 	else:
@@ -105,7 +105,7 @@ def signup():
 			if len(list(signupTable.find(username=username)))==0:
 				session['username'] = request.form['username']
 				signupTable.insert(entry)
-				return render_template("login.html", gender=gender ,email=email, firstname=firstname,lastname=lastname, username=username, password=password, hometown=hometown,website=website,genderr=genderr)
+				return render_template("home.html", gender=gender ,email=email, firstname=firstname,lastname=lastname, username=username, password=password, hometown=hometown,website=website,genderr=genderr)
 			else:
 				session['error'] =  True
 				error = session['error']
