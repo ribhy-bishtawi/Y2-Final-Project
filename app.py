@@ -4,7 +4,7 @@ import time
 
 app = Flask(__name__)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
-db=dataset.connect("postgres://xsablmlvdcwygk:304f665b117ed37f455b90d9ec7ea4235c2ea5a088b24fb094114343473c3ebb@ec2-54-235-119-27.compute-1.amazonaws.com:5432/d7489ilia0g0mf")
+db=dataset.connect("postgresql://xsablmlvdcwygk:304f665b117ed37f455b90d9ec7ea4235c2ea5a088b24fb094114343473c3ebb@ec2-54-235-119-27.compute-1.amazonaws.com:5432/d7489ilia0g0mf")
 
 # def reset_db():
 # 	posts=db["newfeeds"]
@@ -98,7 +98,6 @@ def signup():
 			website = form["website"]
 			#male=form['male']
 			gender = form["select"]
-			print form
 			signupTable = db["signup"]
 			genderr = list(signupTable.all())
 			entry = {"gender":gender , "username": username, "lastname":lastname, "email": email, "firstname": firstname, "password":password,"hometown":hometown,"website":website}
