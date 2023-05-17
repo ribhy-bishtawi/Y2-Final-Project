@@ -4,7 +4,7 @@
 <table>
 <tr>
 <td>
-The website created using Flask for web develeopment course in Code For Palstine program, features a concise introduction about the talented team responsible for its development. This introductory section provides visitors with a brief overview of the team members, showcasing their skills, expertise, and roles in building the website. It allows visitors to establish a connection with the team, fostering a sense of transparency and credibility.
+The website developed using Flask for web develeopment course in Code For Palstine program, features a concise introduction about the talented team responsible for its development. This introductory section provides visitors with a brief overview of the team members, showcasing their skills, expertise, and roles in building the website. It allows visitors to establish a connection with the team, fostering a sense of transparency and credibility.
 
 In addition to the team introduction, the website incorporates a dedicated feedback page that encourages visitors to share their valuable opinions and provide feedback. This feedback page offers a user-friendly interface where visitors can express their thoughts, suggestions, and experiences related to the website. The team has implemented efficient feedback submission mechanisms, ensuring that visitors can easily provide their input.
 
